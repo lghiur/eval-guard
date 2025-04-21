@@ -86,6 +86,29 @@ budgetUsd: 2
 concurrency: 3
 ```
 
+## Environment Variables
+
+EvalGuard can be configured using environment variables, which is especially useful when integrating with other tools like the probe project:
+
+```bash
+# LLM Provider API Keys
+export ANTHROPIC_API_KEY=your_anthropic_api_key    # For Claude models
+export OPENAI_API_KEY=your_openai_api_key          # For OpenAI models
+
+# API URLs (optional, for proxies or enterprise deployments)
+export ANTHROPIC_API_URL=https://your-anthropic-proxy.com
+export OPENAI_API_URL=https://your-openai-proxy.com/v1
+
+# Model Selection
+export MODEL_NAME=claude-3-opus-20240229           # Override the default model
+
+# EvalGuard Configuration
+export EVALGUARD_BUDGET_USD=5                      # Set budget limit in USD
+export EVALGUARD_CONCURRENCY=4                     # Set concurrency level
+```
+
+When both ANTHROPIC_API_KEY and OPENAI_API_KEY are provided, EvalGuard will prioritize Claude models by default.
+
 ## CLI Commands
 
 EvalGuard comes with a CLI for managing snapshots and running tests:

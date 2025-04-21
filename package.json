@@ -1,6 +1,6 @@
 {
   "name": "evalguard",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A plug-and-play TypeScript library that turns any LLM-powered function into a self-testing unit",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,7 +22,7 @@
     "evaluation",
     "snapshot"
   ],
-  "author": "",
+  "author": "laurentiug",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.5.0",
@@ -46,10 +46,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TykTechnologies/eval-guard"
+    "url": "https://github.com/lghiur/eval-guard"
   },
   "bugs": {
-    "url": "https://github.com/TykTechnologies/eval-guard/issues"
+    "url": "https://github.com/lghiur/eval-guard/issues"
   },
-  "homepage": "https://github.com/TykTechnologies/eval-guard#readme"
+  "homepage": "https://github.com/lghiur/eval-guard#readme"
 }

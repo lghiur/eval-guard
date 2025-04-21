@@ -164,6 +164,27 @@ export function mergeConfigs(
     result.budgetUsd = parseFloat(envBudget);
   }
   
+  // Apply LLM provider environment variables
+  if (process.env.MODEL_NAME) {
+    console.log(`[Config] Using MODEL_NAME from environment: ${process.env.MODEL_NAME}`);
+    result.defaults.model = process.env.MODEL_NAME;
+  }
+  
+  // Check for provider-specific environment variables
+  if (process.env.ANTHROPIC_API_KEY) {
+    console.log('[Config] Found ANTHROPIC_API_KEY in environment, using Claude as default provider');
+    result.defaults.provider = 'claude';
+  } else if (process.env.OPENAI_API_KEY) {
+    console.log('[Config] Found OPENAI_API_KEY in environment, using OpenAI as default provider');
+    result.defaults.provider = 'openai';
+  }
+  
+  // Apply concurrency from environment if available
+  const envConcurrency = process.env.EVALGUARD_CONCURRENCY;
+  if (envConcurrency) {
+    result.concurrency = parseInt(envConcurrency, 10);
+  }
+  
   // Apply runtime config
   if (runtimeConfig.metrics) {
     const runtimeMetrics = processMetricsConfig(runtimeConfig.metrics);
