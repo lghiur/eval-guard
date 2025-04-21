@@ -1,0 +1,34 @@
+# EvalGuard configuration file
+
+defaults:
+  provider: claude
+  model: claude-3-sonnet-2025-05-10
+  temperature: 0
+  metrics: [exact, semantic>=0.92]
+
+metrics:
+  exact:
+    enabled: true
+
+  semantic:
+    provider: claude-embed
+    min: 0.92
+
+  judge:
+    enabled: false          # opt-out by default
+    provider: openai
+    model: gpt-4o-mini
+    rubricFile: .eval/rubrics/default.md
+    min: 8
+
+snapshots:
+  backend: yaml
+  dir: .evalguard/snapshots
+
+reporters:
+  - console
+  - github-check
+
+budgetUsd: 2
+concurrency: 3
+failOn: must-pass

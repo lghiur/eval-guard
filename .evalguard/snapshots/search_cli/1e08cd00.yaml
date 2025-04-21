@@ -1,0 +1,8 @@
+id: search_cli
+prompt: '["ranking","."]'
+answer: |-
+  Here are the results for "ranking" in ".":
+  1. First result
+  2. Second result
+  3. Third result
+timestamp: '2025-04-21T21:00:58.245Z'

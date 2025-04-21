@@ -1,0 +1,55 @@
+{
+  "name": "evalguard",
+  "version": "0.1.0",
+  "description": "A plug-and-play TypeScript library that turns any LLM-powered function into a self-testing unit",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "evalguard": "dist/bin/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prepublishOnly": "npm run build",
+    "example": "ts-node examples/basic-usage.ts"
+  },
+  "keywords": [
+    "llm",
+    "testing",
+    "ai",
+    "evaluation",
+    "snapshot"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "eslint": "^8.37.0",
+    "jest": "^29.5.0",
+    "prettier": "^2.8.7",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.0.3"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "sqlite3": "^5.1.6"
+  },
+  "evalguard": {
+    "plugins": {}
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TykTechnologies/eval-guard"
+  },
+  "bugs": {
+    "url": "https://github.com/TykTechnologies/eval-guard/issues"
+  },
+  "homepage": "https://github.com/TykTechnologies/eval-guard#readme"
+}
